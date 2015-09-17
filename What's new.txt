@@ -1,6 +1,0 @@
-﻿@edited by konsolak(02-07-2014)
-
--Egine allagh twn jars me ta kainurgia jar tis eXist 2.1 
--Allagh sthn klash ExistCollection giati ta nea jars eixan allagh sto tropo pu ginotan to restore. Tropoopoihsh kai ths me8odu
-createManager() stin idia klash.
--Metanomasia tis queryString2 se queryString kai afairesh ths palias queryString.
