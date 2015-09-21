@@ -35,8 +35,44 @@ Folders src and lib contain all the files needed to build and create a jar file.
 ## Usage
 The DMS dependecies and licenses used are described in file DMS-Dependencies-LicensesUsed.txt 
 
-Basic usage:
+Usage examples:
 
+How to create a file inside an eXist Collection:
+```java
+public int createFile(String collection, String filename, String content) {
+        try{
+            DBCollection Col = new DBCollection(Config.DB, collection ,Config.DBUSERNAME, Config.DBPASSWORD);
+            DBFile document = Col.createFile(filename,"XMLDBFile");
+            document.setXMLAsString(content);
+            Col.storeFile(document);
+            return 0;
+        } catch(Exception e) {
+            e.printStackTrace(System.out);
+            System.out.println("ERROR occured in Utils.putFile");
+            return -1;
+        }
+}
+```
 
+List files inside an eXist Collection:
+```java
+  String [] files = null;      
+        try {
+          DBCollection  dbcol = new DBCollection("xmldb:exist://139.91.183.31:8080/exist/xmlrpc","/db/Logs","admin","admin");
+          files = dbcol.listFiles();       
+        } catch (DBMSException ex) {      
+            ex.printStackTrace();
+        }
+        return files;
+```
 
-
+Perform a xquery in a eXist file :
+```java
+   String q1[] = null;
+        String q = null;
+        DBFile Log = new DBFile("xmldb:exist://139.91.183.31:8080/exist/xmlrpc","/db/Logs", filename,"admin","admin");										                      
+        q = "for $x in //task\n"+
+             "where $x/type='Error'\n"+
+             "return <task>{$x/file}</task>";
+        q1 =  Log.queryString(q);
+```
