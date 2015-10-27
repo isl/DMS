@@ -30,7 +30,7 @@ DMS
 DMS is a Java API to work with an [eXist] (http://www.exist-db.org "eXist") database (versions 2.1+).
 
 ## Build - Run
-Folders src and lib contain all the files needed to build and create a jar file.
+Folder src contain all the files needed to build and create a jar file. This project is a Maven project, providing all the libs in pom.xml.
 
 ## Usage
 The DMS dependecies and licenses used are described in file DMS-Dependencies-LicensesUsed.txt 
