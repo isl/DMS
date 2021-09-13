@@ -41,13 +41,12 @@ import org.xmldb.api.modules.XMLResource;
 
 /**
  * A
- * <code>DBCollection</code> represents a collection of
- * <code>DBFile</code> objects (files/resources stored within an XML database).
- * An XML database MAY expose collections as a hierarchical set of parent and
- * child collections. <br> <br> A
- * <code>DBCollection</code> provides access to the
- * <code>DBFile</code> objects stored within the
- * <code>DBCollection</code> instances.
+ * <code>DBCollection</code> represents a collection of <code>DBFile</code>
+ * objects (files/resources stored within an XML database). An XML database MAY
+ * expose collections as a hierarchical set of parent and child collections.
+ * <br> <br> A <code>DBCollection</code> provides access to the
+ * <code>DBFile</code> objects stored within the <code>DBCollection</code>
+ * instances.
  */
 public class DBCollection extends DBXUpdate {
 
@@ -73,9 +72,8 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Constructs a new
-     * <code>DBCollection</code> instance associated with the specified
-     * collection in the specified database.
+     * Constructs a new <code>DBCollection</code> instance associated with the
+     * specified collection in the specified database.
      *
      * @param database the database where the collection (next argument) is in.
      * @param collection the name of the collection.
@@ -116,8 +114,7 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Returns the name associated with this
-     * <code>DBCollection</code>.
+     * Returns the name associated with this <code>DBCollection</code>.
      *
      * @return the name of this <code>DBCollection</code>.
      * @throws DBMSException with expected error codes.
@@ -140,8 +137,7 @@ public class DBCollection extends DBXUpdate {
 
     /**
      * Returns the full path in the database of the collection represented by
-     * this
-     * <code>DBCollection</code>.
+     * this <code>DBCollection</code>.
      *
      * @return the full path in the database of the collection represented by
      * this <code>DBCollection</code>.
@@ -152,8 +148,7 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Returns the parent collection for this
-     * <code>DBcollection</code> or
+     * Returns the parent collection for this <code>DBcollection</code> or
      * <code>null</code> if no parent collection exists.
      *
      * @return the parent <code>DBcollection</code> instance.
@@ -205,9 +200,8 @@ public class DBCollection extends DBXUpdate {
 
     /**
      * Returns an array containing the collection names naming all child
-     * collections in this
-     * <code>DBCollection</code>. If no child collections exist an empty array
-     * is returned.
+     * collections in this <code>DBCollection</code>. If no child collections
+     * exist an empty array is returned.
      *
      * @return an array of <code>String</code> containing the collection names
      * for all child collections.
@@ -230,9 +224,8 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Returns a
-     * <code>DBCollection</code> instance for the requested child collection if
-     * it exists.
+     * Returns a <code>DBCollection</code> instance for the requested child
+     * collection if it exists.
      *
      * @param collection the name of the child collection to be retrieved.
      * @return a <code>DBCollection</code> representing the requested child
@@ -334,12 +327,10 @@ public class DBCollection extends DBXUpdate {
 //	}
     /**
      * Removes a collection from the database. The specified collection must be
-     * a child collection of this
-     * <code>DBCollection</code>. Thus it is treated relative to this
-     * <code>DBCollection</code>. <br><br> Since the collection to be removed is
-     * treated relative to this
-     * <code>DBCollection</code>, <b>the name of the collection must NOT start
-     * with a '/'</b>.
+     * a child collection of this <code>DBCollection</code>. Thus it is treated
+     * relative to this <code>DBCollection</code>. <br><br> Since the collection
+     * to be removed is treated relative to this <code>DBCollection</code>,
+     * <b>the name of the collection must NOT start with a '/'</b>.
      *
      * @param collection the name of the collection to be removed.
      * @throws DBMSException with expected error codes.
@@ -414,20 +405,16 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Creates a new empty
-     * <code>DBFile</code> with the specified name. The type of the
-     * <code>DBFile</code> returned is determined by the type argument. The DBMS
-     * API currently defines "XMLDBFile", "BinaryDBFile" and "QueryDBFile" as
-     * valid types. <b>When creating a new file only the first two types are
-     * valid. </b> The name provided must be unique within the scope of the
-     * collection. If name is
-     * <code>null</code> or its value is empty then a name is automatically
-     * generated. The
-     * <code>DBFile</code> created is not stored to the database until
-     * storeFile() (or other 'store' method) is called. <br> <br> The collection
-     * specified by this
-     * <code>DBCollecion</code> is the owner of the created
-     * <code>DBFile</code>.
+     * Creates a new empty <code>DBFile</code> with the specified name. The type
+     * of the <code>DBFile</code> returned is determined by the type argument.
+     * The DBMS API currently defines "XMLDBFile", "BinaryDBFile" and
+     * "QueryDBFile" as valid types. <b>When creating a new file only the first
+     * two types are valid. </b> The name provided must be unique within the
+     * scope of the collection. If name is <code>null</code> or its value is
+     * empty then a name is automatically generated. The <code>DBFile</code>
+     * created is not stored to the database until storeFile() (or other 'store'
+     * method) is called. <br> <br> The collection specified by this
+     * <code>DBCollecion</code> is the owner of the created <code>DBFile</code>.
      *
      * @param file the name of the file to be created.
      * @param type the type of the file to be created.
@@ -519,14 +506,13 @@ public class DBCollection extends DBXUpdate {
 //	}
 
     /**
-     * Retrieves a file (stored in this
-     * <code>DBCollection</code>) from the database. If the file could not be
-     * located a
-     * <code>null</code> value will be returned.
+     * Retrieves a file (stored in this <code>DBCollection</code>) from the
+     * database. If the file could not be located a <code>null</code> value will
+     * be returned.
      *
      * @param file the filename of the file to be retrieved.
-     * @return a <code>DBFile</code> representing the retrieved file * * *
-     * or <code>null</code> if the file does not exist.
+     * @return a <code>DBFile</code> representing the retrieved file * * * or
+     * <code>null</code> if the file does not exist.
      * @throws DBMSException with expected error codes.
      */
     public DBFile getFile(String file) throws DBMSException {
@@ -551,9 +537,8 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Removes a file from this
-     * <code>DBCollection</code>. The specified file is removed from the
-     * database.
+     * Removes a file from this <code>DBCollection</code>. The specified file is
+     * removed from the database.
      *
      * @param file the name of the file to be removed.
      * @throws DBMSException with expected error codes.
@@ -563,14 +548,12 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Removes a
-     * <code>DBFile</code> from this
-     * <code>DBCollection</code>. The file associated with the specified
-     * <code>DBFile</code> is removed from the database, from the collection
-     * associated with this
-     * <code>DBCollection</code>.<br> <br> If the
-     * <code>DBFile</code> is not owned by this
-     * <code>DBCollection</code> it throws an exception indicating the error.
+     * Removes a <code>DBFile</code> from this <code>DBCollection</code>. The
+     * file associated with the specified <code>DBFile</code> is removed from
+     * the database, from the collection associated with this
+     * <code>DBCollection</code>.<br> <br> If the <code>DBFile</code> is not
+     * owned by this <code>DBCollection</code> it throws an exception indicating
+     * the error.
      *
      * @param file the <code>DBFile</code> representing the file to be removed.
      * @throws DBMSException with expected error codes.
@@ -596,13 +579,11 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Stores a
-     * <code>DBFile</code> into the
-     * <code>DBCollection</code>. The file associated with the specified
-     * <code>DBFile</code> is stored into the database. If the file does NOT
-     * already exist it will be created. If it does already exist it will be
-     * updated. <br><br> <b>The owner collection of the specified
-     * <code>DBFile</code> is NOT changed.</b>
+     * Stores a <code>DBFile</code> into the <code>DBCollection</code>. The file
+     * associated with the specified <code>DBFile</code> is stored into the
+     * database. If the file does NOT already exist it will be created. If it
+     * does already exist it will be updated. <br><br> <b>The owner collection
+     * of the specified <code>DBFile</code> is NOT changed.</b>
      *
      * @param file the <code>DBFile</code> representing the file to be stored.
      * @throws DBMSException with expected error codes.
@@ -624,21 +605,17 @@ public class DBCollection extends DBXUpdate {
     }
 
     /**
-     * Stores a
-     * <code>DBFile</code> into the
-     * <code>DBCollection</code>, under a particular name. The file associated
-     * with the specified
+     * Stores a <code>DBFile</code> into the <code>DBCollection</code>, under a
+     * particular name. The file associated with the specified
      * <code>DBFile</code> is stored into the database under the specified name.
      * If the file does NOT already exist it will be created. If it does already
-     * exist it will be updated. It returns a
-     * <code>DBFile</code> representing the newly stored file<br> <br> If the
-     * content of the
-     * <code>DBFile</code> was changed but NOT stored, the file under the
-     * original name in the database will not reflect the changes (until
-     * <code>store</code> is called). Only the file under the 'new' name will
-     * reflect the content of this
-     * <code>DBFile</code>. <br><br> <b>The owner collection of the specified
-     * <code>DBFile</code> is NOT changed.</b>
+     * exist it will be updated. It returns a <code>DBFile</code> representing
+     * the newly stored file<br> <br> If the content of the <code>DBFile</code>
+     * was changed but NOT stored, the file under the original name in the
+     * database will not reflect the changes (until <code>store</code> is
+     * called). Only the file under the 'new' name will reflect the content of
+     * this <code>DBFile</code>. <br><br> <b>The owner collection of the
+     * specified <code>DBFile</code> is NOT changed.</b>
      *
      * @param file the <code>DBFile</code> representing the file to be stored.
      * @param fileName the name under which the file will be stored.
@@ -660,52 +637,81 @@ public class DBCollection extends DBXUpdate {
         return f;
     }
 
-   
-    
-     /**
+    /**
      * Executes a query (either XPath or XQuery) against this
      * <code>DBCollection</code>. The result is an array containing the results
      * of the query.
      *
      * @param query the XQuery query string to use.
-     * @return an array of <code>String</code> containing the results
-     * of the query.
+     * @return an array of <code>String</code> containing the results of the
+     * query.
      * @throws DBMSException
      */
     public String[] query(String query) throws DBMSException {
-        
-         String[] ret = null;
-            try {
-                XPathQueryService service = (XPathQueryService) this.Collection.getService("XQueryService", "1.0");
-                ResourceSet rs = service.query( query);
-                XMLResource resource;
-                ret = new String[(int) rs.getSize()];
-                ResourceIterator ri = rs.getIterator();
-                int index = 0;
 
-                while (ri.hasMoreResources()) {
-                    resource= (XMLResource) ri.nextResource();
-                    ret[index++] = (String) resource.getContent();
+        String[] ret = null;
+        try {
+            XPathQueryService service = (XPathQueryService) this.Collection.getService("XQueryService", "1.0");
+            ResourceSet rs = service.query(query);
+            XMLResource resource;
+            ret = new String[(int) rs.getSize()];
+            ResourceIterator ri = rs.getIterator();
+            int index = 0;
+
+            while (ri.hasMoreResources()) {
+                resource = (XMLResource) ri.nextResource();
+                ret[index++] = (String) resource.getContent();
+            }
+        } catch (XMLDBException XMLDBEx) {
+            throw new DBMSException(XMLDBEx);
+        } finally {
+            if (this.Collection != null) {
+                try {
+                    this.Collection.close();
+                } catch (XMLDBException e) {
+                    e.printStackTrace();
                 }
-            } catch (XMLDBException XMLDBEx) {
-                throw new DBMSException(XMLDBEx);
             }
-            finally{
-                if (this.Collection != null)
-                    try {
-                        this.Collection.close();}
-                    catch (XMLDBException e) {
-                        e.printStackTrace();
-                    }
-            }
-            return ret;
-        
+        }
+        return ret;
+
     }
 
     /**
-     * Runs a set of XUpdate operations against this
-     * <code>DBCollection</code>. All affected documents are updated and stored
-     * back into the collection.
+     * Executes a query (either XPath or XQuery) against this
+     * <code>DBCollection</code>. The result is a ResourceSet containing the
+     * results of the query.
+     *
+     * @param query the XQuery query string to use.
+     * @return an array of <code>String</code> containing the results of the
+     * query.
+     * @throws DBMSException
+     */
+    public ResourceSet queryGetResourceSet(String query) throws DBMSException {
+
+        ResourceSet rs = null;
+        try {
+            XPathQueryService service = (XPathQueryService) this.Collection.getService("XQueryService", "1.0");
+            service.setProperty("indent", "yes");
+            service.setProperty("encoding", "UTF-8");
+            rs = service.query(query);
+        } catch (XMLDBException XMLDBEx) {
+            throw new DBMSException(XMLDBEx);
+        } finally {
+            if (this.Collection != null) {
+                try {
+                    this.Collection.close();
+                } catch (XMLDBException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return rs;
+    }
+
+    /**
+     * Runs a set of XUpdate operations against this <code>DBCollection</code>.
+     * All affected documents are updated and stored back into the collection.
      *
      * @param updateQuery The XUpdate commands to use.
      * @return the number of modified nodes in the file.
